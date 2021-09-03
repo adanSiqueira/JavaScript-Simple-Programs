@@ -1,5 +1,4 @@
-//este programa solicita 2 numeros, tendo como saída uma listsa de todos numeros primos existente no intervalo entre eles.
-
+//este programa solicita 2 numeros, tendo como saída uma lista de todos numeros primos existentes no intervalo entre eles.
 // um numero primo é aquele divisível por um e por ele mesmo, somente.
 
 
@@ -7,11 +6,11 @@ function primesInInterval(a, b){
   var listaDePrimos = [];
   //primeiro for: criado para realizar um loop no intervalo entre os 2 numeros informados pelo usuario
   for (let i = a; i<=b ; i++){
-    //criamos a variavel flag como um sinal: ela será 0, ate acharmos um primo, quando ela assumirá o valor 1
+    //criamos a variavel flag como um sinal: ela será 0, ate acharmos um primo
 	  let flag = 0;
     // segundo for: criado para realizar um loop entre 2 e o numero guardado em i
 	  for (let j = 2; j<i ; j++){
-		  // se a divisão entre i e j não houver resto, são divisíveis, logo i não é primo, e a flag assumirá valor 1.
+		  // se a divisão entre i e j não houver resto significa que são divisíveis, logo i não é primo, e a flag assumirá valor 1.
       if (i%j == 0){
 		  flag = 1;
 		  }
