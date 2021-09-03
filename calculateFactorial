@@ -1,0 +1,17 @@
+// Este programa calcula o fatorial de um numero inteiro qualquer
+
+function factorial(n){
+  //se o numero de entrada for igual a 0 ou 1, o fatorial será 1.
+	if (n==0 || n==1){
+		return 1;
+		} else{
+      //caso contrário, o fatorial será a multiplicação do proprio numero com seu fatorial anterior
+		return n* factorial(n-1)
+		}
+	}
+
+console.log('Este programa calcula o fatorial de um numero. ');
+
+number = parseInt(prompt('Entre com o numero que deseja calcular o fatorial: '));
+
+factorial(number);
