@@ -1,0 +1,84 @@
+//este programa verifica se dois numeros inteiros quaisquer possuem o mesmo digito final
+
+//é condição para que isso ocorra, que ambos tenham o mesmo resto da divisão por 10
+
+
+
+function checkLastDigit(a,b){
+
+let c = a/10;
+let d = a%10;
+
+let e = b/10
+let f = b%10;
+
+//verificando o caso em que a e b estao no intervalo [0;9]
+if (c==0 && e==0){
+	if (d==f){
+		return ` ${a} e  ${b} têm o último digito igual`;
+	} else{
+		return ` ${a}   e ${b}   não têm o último digito igual`;
+		}
+	}
+
+
+//verificado o caso em que apenas b esta no intervalo [0;9]
+if (c!==0 && e==0){
+	while (c!==0){
+    //dividiremos a quantas vezes forem necessarias por 10
+    //a cada divisao por 10, a 'perde' 1 digito, e um novo resto d é calculado.
+    //quando c==0, restará apenas 1 digito, quando vamos comparar os restos finais.
+		c = c/10;
+		d = d%10;
+		if (d==f){
+			return ` ${a} e  ${b}  têm o último digito igual`;
+			} else{
+			return ` ${a}   e ${b}   não têm o último digito igual`;
+		}
+		break
+	}
+}
+
+//verificando o caso em que apenas a esta no intervalo [0;9]
+if (c==0 && e!==0){
+	while (e!==0){
+    //mesmo raciocinio das linhas 26,27,28
+		e = e/10;
+		f = f%10;
+		if (d==f){
+			return ` ${a} e  ${b}  têm o último digito igual`;
+		} else{
+			return ` ${a}   e ${b}   não têm o último digito igual`;
+		} 
+		break
+	}
+}
+
+//verificando o caso em que nenhum dos dois esta no intervalo [0;9]
+if (c!==0 && e!==0){
+	while (e!==0){
+     //mesmo raciocinio das linhas 26,27,28
+		e = e/10;
+		f = f%10;
+		while (c!==0){
+       //mesmo raciocinio das linhas 26,27,28
+			c = c/10;
+			d = d%10;
+		}
+	if (d==f){
+		return ` ${a} e  ${b}  têm o último digito igual`;
+		} else{
+		return ` ${a}   e ${b}   não têm o último digito igual`;
+	} 
+	break
+}
+}
+
+}
+
+console.log("Este programa verifica se dois numeros possuem o mesmo digito final ");
+
+const a = parseInt(prompt("Digite o primeiro numero: "));
+const b = parseInt(prompt("Digite o segundo numero: "));
+
+checkLastDigit(a,b); 
