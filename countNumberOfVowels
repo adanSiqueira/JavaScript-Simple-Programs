@@ -1,0 +1,35 @@
+//este programa verifica o numero de vogais em uma palavra
+
+function countVowels(word){
+
+//o metodo .includes verifica se ha o termo(vogal) dentro da string referencia(palavra ou frase de entrada)
+
+	let a = word.includes('a');
+	let b = word.includes('e');
+	let c = word.includes('i');
+	let d = word.includes('o');
+	let e = word.includes('u');
+
+	let f = word.length;
+
+	let numberOfVowels = [];
+
+	for (let y = 0; y<f ; y++){
+    //laço para verificar cada letra da string, posição por posição, se é vogal ou nao.
+		if (word[y] == 'a' | word[y] == 'e' | word[y] == 'i' | word[y] == 'o' | word[y] == 'u'){
+
+      //sendo vogal, incluí-la no array
+			numberOfVowels.push(word[y]);
+			}
+		}
+
+    //o numero de vogais será o numero de termos incluídos no array
+		return numberOfVowels.length;
+		}
+
+
+console.log('Este programa retorna o numero de vogais dentro da palavra de entrada. ');
+
+let z = prompt('Entre com a palavra ou frase: ');
+
+countVowels(z);
