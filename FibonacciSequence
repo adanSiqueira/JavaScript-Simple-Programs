@@ -1,0 +1,32 @@
+//este programa calcula a sequencia de fibonacci
+
+// a sequência de Fibonacci é aquela que, tendo seu primeiro termo = 1, o termo seguinte é igual a soma dos dois últimos.
+
+//o numero de termos mostrado será o numero de entrada informado pelo usuário
+
+console.log("Este programa calcula a Sequência de Fibonacci");
+
+//o programa será divido em 2 funções
+
+// FibTerms calulará o valor dos termos da sequência
+function FibTerms(n){
+	if (n<2){
+		return n;
+		} else {
+		return FibTerms(n-1) + FibTerms(n-2)
+		}
+}
+
+//FibSequence acrescentará o numero de termos solicitado à lista
+function FibSequence(n){
+
+  let sequence = [];
+  for (let i = 1 ; i<= n; i ++){
+    sequence.push(FibTerms(i));
+  }
+  return sequence;
+}
+
+const a = parseInt(prompt('Entre com o numero de termos: '));
+
+FibSequence(a);
