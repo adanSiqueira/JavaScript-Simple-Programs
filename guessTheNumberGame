@@ -1,0 +1,24 @@
+//jogo: adivinhe qual é o número
+
+//o jogo consiste em o usuário adivinhar um número sorteado entre 1 e 10.
+
+function guessNumber(){
+  //math.random sorteará um número entre 0 e 1.
+  // multiplicando por 10 e adicionando 1, teremos um numero entre 0 e 9
+  //math.floor selecionará apenas a parte inteira deste númer
+	const random = Math.floor(Math.random()*10)+1;
+
+	let number = parseInt(prompt('Adivinhe qual o número entre 1 e 10: '));
+
+  //caso adivinhe, receberá uma mensagem de parabéns.
+
+	while (number !== random) {
+     //caso contrário, o programa repetirá a pergunta
+		number = parseInt(prompt('Adivinhe qual o número entre 1 e 10: '));
+		}
+	if (number == random){
+		console.log('Você acertou!');
+		}
+	}
+
+guessNumber()
