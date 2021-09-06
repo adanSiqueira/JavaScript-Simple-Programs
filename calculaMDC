@@ -1,0 +1,48 @@
+//este programa calcula o maximo divisor comum (MDC) entre dois numeros inteiros.
+
+function Mdc(a,b){
+
+let divisors = [];
+
+if (a>b){
+  // criamos a variável c para guardar o resto da divisão entre a e b
+	let c = a%b;
+	if (c==0){
+    //se os numeros sao divisíveis entre si, o MDC é o menor deles.
+		console.log(`${b} é o MDC.`);
+
+    } else {
+      //caso nao sejam divisíveis, usaremos o loop while e a variável c para realizar divisões sucessivas entre o menor numero da divisão anterior e o resto
+			while (c!==0){
+				c == b%c;
+				b == c;
+				divisors.push(c);
+        // todos restos são armazenados na lista divisors
+				console.log(`${divisors[divisors.length-1]}  é o MDC`);
+        // o último resto será o MDC
+        break
+				}
+			}
+
+		} else {
+// raciocínio análogo usado em 8-24, porém, para o caso em que b>a
+			let c = b%a;
+			if (c==0){
+				console.log(`${a} é o MDC.`);
+				} else{
+					while(c!==0){
+						c == a%c;
+						a == c;
+						divisors.push(c);
+						console.log(`${divisors[divisors.length-1]}  é o MDC`);
+						break
+						}
+					}
+			}	
+}
+
+console.log("Este programa calcula o MDC de dois números inteiros. ");
+let a = parseInt(prompt("Entre com o primeiro número: "));
+let b = parseInt(prompt("Entre com o segundo número: "));
+
+Mdc(a,b);
