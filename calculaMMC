@@ -1,0 +1,25 @@
+//este programa calcula o minimo multiplo comum (MMC) entre dois numeros.
+
+console.log("Este programa calcula o mmc de 2 numeros ");
+
+function Mmc(a,b){
+
+let n = a>b ? a : b;
+//o operador ternário faz a variavel n receber o maior valor entre a e b
+
+while(true){
+  //por definição, o MMC de a e b será um valor divisível por a e b, portanto o resto da divisão de ambos é 0.
+	if (n % a == 0 && n % b == 0){
+	console.log(`O MMc de ${a} e ${b} é ${n}`)
+	break
+	}
+	n++
+  //o numero n será testado dentro do loop, até que o resto de sua divisao por a e b seja 0, sendo incrementado 1 a cada teste mal sucedido
+}
+
+}
+
+let a = parseInt(prompt("Entre com o primeiro número: "));
+let b = parseInt(prompt("Entre com o segundo número: "));
+
+Mmc(a,b)
