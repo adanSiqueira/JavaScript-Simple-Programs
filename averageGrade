@@ -1,0 +1,50 @@
+//Este programa calculará a nota média (de 0 a 100) de três provas.
+
+
+function averageGrade(){
+
+a = parseInt(prompt('Digite o valor da 1a nota (0 a 100): '));
+if (a>100){
+  while (a>100){
+    //caso o usuário entre com uma nota não permitida, o programa repetirá a solicitação, até o valor de entrada ser correto.
+    a = parseInt(prompt('Digite o valor correto da 1a nota: '));
+  }
+}
+
+b = parseInt(prompt('Digite o valor da 2a nota (0 a 100): '));
+if (b>100){
+  while (b>100){
+    b = parseInt(prompt('Digite o valor correto da 2a nota: '));
+    }
+}
+
+c = parseInt(prompt('Digite o valor da 3a nota (0 a 100): '));
+if (c>100){
+  while (c>100){
+    c = parseInt(prompt('Digite o valor correto da 3a nota: '));
+    }
+}
+  
+let average = Math.floor((a+b+c)/3);
+//a média será o valor inteiro da média.
+
+//para cada intervalo de média, será atribuído um conceito
+if (average >= 90) {
+	return `A média foi  ${average}  e o conceito será A`
+	}
+if (average>80 && average<=89){
+	return `A média foi  ${average}  e o conceito será B`
+	}
+if (average>70 && average<=79){
+	return `A média foi  ${average}  e o conceito será C`
+	}
+if (average>60 && average <=69){
+	return `A média foi  ${average}  e o conceito será D`
+	} else {
+	  return `A média foi  ${average}  e o conceito será F`
+			}
+}
+
+console.log('Este programa calcula a nota média dos três testes. ');
+
+averageGrade()
