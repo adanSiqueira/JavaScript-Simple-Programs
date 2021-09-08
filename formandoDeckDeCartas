@@ -1,0 +1,43 @@
+//este programa forma um deck de cartas embaralhado, e fornece ao usuario  o numero de cartas solicitado
+
+function deckOfCards(){
+
+console.log("Este programa gera um deck de cartas embaralhado, e te devolve uma mão de cartas. ");
+let n = parseInt(prompt('Informe o numero de cartas desejado: '));
+
+//declarando os naipes e os valores
+const naipes = ["Espadas", "Ouros", "Paus", "Copas"];
+const valores = ["Ás", "1", "2", "3", "4", "5", "6", "7", "8", "9","10", "Rainha", "Valete", "Rei"];
+
+
+//formando o deck
+let deck = [];
+
+for (let i=1; i<= naipes.length-1; i++){
+	for (let x=1; x<= valores.length-1; x++){
+		let carta = {Valor: valores[x], Naipe: naipes[i]};
+		deck.push(carta);
+		}
+	}
+
+//embaralhando as cartas
+for (let i = deck.length-1; i>0; i--){
+	let j = Math.floor(Math.random()*i);
+	let temp = deck[i];
+	deck [i] = deck [j];
+	deck [j] = temp
+	}
+
+//formando a mão, com o valor de cartas desejado
+let mao = []
+let i = 0;
+do{
+  mao.push(deck[i]);
+  i++;
+  } while (i<n)
+  return mao
+  
+}
+
+
+deckOfCards()
