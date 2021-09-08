@@ -1,0 +1,30 @@
+//este programa apresenta ao usuário uma calculadora para as 4 operações básicas entre 2 numeros.
+
+function calculadora(){
+
+console.log("Esta é uma calculadora.");
+
+const a = parseFloat(prompt("Entre com o primeiro número: "));
+const b = prompt("Selecione a operação (+ ; - ; * ; / )" );
+const c = parseFloat(prompt("Entre com o segundo número"));
+
+if (b == '+'){
+	const d = a + c;
+	return `Resultado: ${d}`;
+
+} else if (b == '-'){
+	const d = a - c;
+	return `Resultado: ${d}`;
+
+} else if (b == '*'){
+	const d = a * c;
+	return `Resultado: ${d}`;
+
+} else {
+	const d = a / c;
+	return `Resultado: ${d}`;
+  
+}
+}
+
+calculadora()
